@@ -1,0 +1,3780 @@
+"6:58:05 PM, Wednesday, March 30, 2016: Compressed sources"!
+
+DevelopmentSessionManager installNew!
+
+SessionManager current defaultResourceLibrary loadFlags: 0.
+SessionManager current stashBootInfo!
+
+"Ensure all structures have calculated size to avoid recompilation messages later"
+ExternalStructure allSubclasses do: [:e | e byteSize]!
+
+"Mark all the booted packages as base"
+Package manager markAllPackagesAsBase!
+
+SessionManager current saveImage!
+
+"6:59:05 PM, Wednesday, March 30, 2016: Image saved"!
+
+"Remove rogue .img and unnecessary .chg files"
+File delete: (File default: SessionManager current imagePath extension: 'img').
+File delete: 'DBOOT.chg'!
+
+SessionManager current quit!
+
+"00:11:51, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Logistica
+	instanceVariableNames: 'administracion empleados clientes envios'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Logistica guid: (GUID fromString: '{7C800E73-8950-4C4D-8A7C-A68E3B920C5D}')!
+
+Logistica guid: (GUID fromString: '{7C800E73-8950-4C4D-8A7C-A68E3B920C5D}')!
+Logistica comment: ''!
+
+Logistica comment:
+''!
+!Logistica categoriesForClass!Kernel-Objects! !
+!Logistica methodsFor!
+administracion
+	^administracion! !
+!Logistica categoriesFor: #administracion!public! !
+
+!Logistica methodsFor!
+administracion: anObject
+	administracion := anObject! !
+!Logistica categoriesFor: #administracion:!public! !
+
+!Logistica methodsFor!
+clientes
+	^clientes! !
+!Logistica categoriesFor: #clientes!public! !
+
+!Logistica methodsFor!
+clientes: anObject
+	clientes := anObject! !
+!Logistica categoriesFor: #clientes:!public! !
+
+!Logistica methodsFor!
+empleados
+	^empleados! !
+!Logistica categoriesFor: #empleados!public! !
+
+!Logistica methodsFor!
+empleados: anObject
+	empleados := anObject! !
+!Logistica categoriesFor: #empleados:!public! !
+
+!Logistica methodsFor!
+envios
+	^envios! !
+!Logistica categoriesFor: #envios!public! !
+
+!Logistica methodsFor!
+envios: anObject
+	envios := anObject! !
+!Logistica categoriesFor: #envios:!public! !
+
+!Logistica categoriesFor: #administracion!accessing!private! !
+
+!Logistica categoriesFor: #administracion:!accessing!private! !
+
+!Logistica categoriesFor: #clientes!accessing!private! !
+
+!Logistica categoriesFor: #clientes:!accessing!private! !
+
+!Logistica categoriesFor: #empleados!accessing!private! !
+
+!Logistica categoriesFor: #empleados:!accessing!private! !
+
+!Logistica categoriesFor: #envios!accessing!private! !
+
+!Logistica categoriesFor: #envios:!accessing!private! !
+
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Persona
+	instanceVariableNames: 'nombre apellido dni direccion'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Persona guid: (GUID fromString: '{CBCA045A-8394-43A5-8933-393775634DD1}')!
+
+Persona guid: (GUID fromString: '{CBCA045A-8394-43A5-8933-393775634DD1}')!
+Persona comment: ''!
+
+Persona comment:
+''!
+!Persona categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Persona subclass: #Empleado
+	instanceVariableNames: 'legajo'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Empleado guid: (GUID fromString: '{84B34B88-8F19-4C01-93F9-2AA11FBE3103}')!
+
+Empleado guid: (GUID fromString: '{84B34B88-8F19-4C01-93F9-2AA11FBE3103}')!
+Empleado comment: ''!
+
+Empleado comment:
+''!
+!Empleado categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Empleado subclass: #Administrador
+	instanceVariableNames: 'sector'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Administrador guid: (GUID fromString: '{C7AB0998-E7FF-4EE8-8F3D-9C2175606460}')!
+
+Administrador guid: (GUID fromString: '{C7AB0998-E7FF-4EE8-8F3D-9C2175606460}')!
+Administrador comment: ''!
+
+Administrador comment:
+''!
+!Administrador categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Empleado subclass: #Chofer
+	instanceVariableNames: 'registro seguro vehiculo'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Chofer guid: (GUID fromString: '{1D0692C1-1F4A-41F1-8DEE-AA1C83A40EC8}')!
+
+Chofer guid: (GUID fromString: '{1D0692C1-1F4A-41F1-8DEE-AA1C83A40EC8}')!
+Chofer comment: ''!
+
+Chofer comment:
+''!
+!Chofer categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Caja
+	instanceVariableNames: 'cuentas'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Caja guid: (GUID fromString: '{A99CA924-0390-475E-8B84-E5FB2E1088BB}')!
+
+Caja guid: (GUID fromString: '{A99CA924-0390-475E-8B84-E5FB2E1088BB}')!
+Caja comment: ''!
+
+Caja comment:
+''!
+!Caja categoriesForClass!Kernel-Objects! !
+!Caja methodsFor!
+total! !
+!Caja categoriesFor: #total!public! !
+
+!Caja categoriesFor: #total!public! !
+
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Cuenta
+	instanceVariableNames: 'total ingresos egresos'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Cuenta guid: (GUID fromString: '{93A22CDB-30F0-4802-823C-B10E7D8B8436}')!
+
+Cuenta guid: (GUID fromString: '{93A22CDB-30F0-4802-823C-B10E7D8B8436}')!
+Cuenta comment: ''!
+
+Cuenta comment:
+''!
+!Cuenta categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Direccion
+	instanceVariableNames: 'calle altura localidad ciudad cod_postal'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Direccion guid: (GUID fromString: '{F70FF5D6-D3E4-40FA-8AED-1FCE1C053D4C}')!
+
+Direccion guid: (GUID fromString: '{F70FF5D6-D3E4-40FA-8AED-1FCE1C053D4C}')!
+Direccion comment: ''!
+
+Direccion comment:
+''!
+!Direccion categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Direccion subclass: #Destino
+	instanceVariableNames: 'referencia horario quien_recibe telefono'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Destino guid: (GUID fromString: '{DD9771CE-561E-4BE7-8302-A24BF1DB58E8}')!
+
+Destino guid: (GUID fromString: '{DD9771CE-561E-4BE7-8302-A24BF1DB58E8}')!
+Destino comment: ''!
+
+Destino comment:
+''!
+!Destino categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Envio
+	instanceVariableNames: 'ref_envio historial_estados estado_actual cliente legajo destino'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Envio guid: (GUID fromString: '{46DEAA6B-C80B-472A-8C25-FEFF4F7E9A04}')!
+
+Envio guid: (GUID fromString: '{46DEAA6B-C80B-472A-8C25-FEFF4F7E9A04}')!
+Envio comment: ''!
+
+Envio comment:
+''!
+!Envio categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Logistica
+	instanceVariableNames: 'administracion empleados clientes envios'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Logistica guid: (GUID fromString: '{7C800E73-8950-4C4D-8A7C-A68E3B920C5D}')!
+
+Logistica guid: (GUID fromString: '{7C800E73-8950-4C4D-8A7C-A68E3B920C5D}')!
+Logistica comment: ''!
+
+Logistica comment:
+''!
+!Logistica methodsFor!
+administracion
+	^administracion! !
+!Logistica categoriesFor: #administracion!accessing!private! !
+
+!Logistica methodsFor!
+administracion: anObject
+	administracion := anObject! !
+!Logistica categoriesFor: #administracion:!accessing!private! !
+
+!Logistica methodsFor!
+clientes
+	^clientes! !
+!Logistica categoriesFor: #clientes!accessing!private! !
+
+!Logistica methodsFor!
+clientes: anObject
+	clientes := anObject! !
+!Logistica categoriesFor: #clientes:!accessing!private! !
+
+!Logistica methodsFor!
+empleados
+	^empleados! !
+!Logistica categoriesFor: #empleados!accessing!private! !
+
+!Logistica methodsFor!
+empleados: anObject
+	empleados := anObject! !
+!Logistica categoriesFor: #empleados:!accessing!private! !
+
+!Logistica methodsFor!
+envios
+	^envios! !
+!Logistica categoriesFor: #envios!accessing!private! !
+
+!Logistica methodsFor!
+envios: anObject
+	envios := anObject! !
+!Logistica categoriesFor: #envios:!accessing!private! !
+
+!Logistica categoriesFor: #administracion!accessing!private! !
+
+!Logistica categoriesFor: #administracion:!accessing!private! !
+
+!Logistica categoriesFor: #clientes!accessing!private! !
+
+!Logistica categoriesFor: #clientes:!accessing!private! !
+
+!Logistica categoriesFor: #empleados!accessing!private! !
+
+!Logistica categoriesFor: #empleados:!accessing!private! !
+
+!Logistica categoriesFor: #envios!accessing!private! !
+
+!Logistica categoriesFor: #envios:!accessing!private! !
+
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Administracion
+	instanceVariableNames: 'caja facturas metodos_de_pago'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Administracion guid: (GUID fromString: '{43D40BDA-2338-4E1E-811A-36D0748B96B3}')!
+
+Administracion guid: (GUID fromString: '{43D40BDA-2338-4E1E-811A-36D0748B96B3}')!
+Administracion comment: ''!
+
+Administracion comment:
+''!
+!Administracion categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Persona subclass: #Cliente
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Cliente guid: (GUID fromString: '{81EE42E5-4252-4186-B793-25C4083118F9}')!
+
+Cliente guid: (GUID fromString: '{81EE42E5-4252-4186-B793-25C4083118F9}')!
+Cliente comment: ''!
+
+Cliente comment:
+''!
+!Cliente categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+Object subclass: #Factura
+	instanceVariableNames: 'nro_factura fecha total metodo_pago cliente detalles'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Factura guid: (GUID fromString: '{E17D89A4-A09E-43F7-815C-4897DB1B9EAC}')!
+
+Factura guid: (GUID fromString: '{E17D89A4-A09E-43F7-815C-4897DB1B9EAC}')!
+Factura comment: ''!
+
+Factura comment:
+''!
+!Factura categoriesForClass!Kernel-Objects! !
+!
+
+"Filed out from Dolphin Smalltalk 7"!
+
+ConsoleSessionManager subclass: #MenuLogistica
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+MenuLogistica guid: (GUID fromString: '{5202BD33-8323-4A06-BED9-88BE992D9EFC}')!
+
+MenuLogistica guid: (GUID fromString: '{5202BD33-8323-4A06-BED9-88BE992D9EFC}')!
+MenuLogistica comment: ''!
+
+MenuLogistica comment:
+''!
+!MenuLogistica categoriesForClass!Samples! !
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Hello World!!'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout 
+		nextPutAll: 'Hello World!!'; cr.].
+	(input = '1') ifTrue: [self stdout 
+		nextPutAll: 'Hello World!!'; cr.].
+	(input = '2') ifTrue: [self stdout 
+		nextPutAll: 'Hello World!!'; cr.].
+	(input = '3') ifTrue: [self stdout 
+		nextPutAll: 'Hello World!!'; cr. ].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!public! !
+
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!
+
+"00:20:52, domingo, 4 de junio de 2023: Image saved"!
+
+"00:21:49, domingo, 4 de junio de 2023: Image saved"!
+
+logistica:= Logistica CrearLogisticaNombre: 'MSA'.!
+
+Logistica comment:
+'crearlogisticaNombre: unNombre'!
+!Logistica class methodsFor!
+crearlogisticaNombre: unNombre! !
+!Logistica class categoriesFor: #crearlogisticaNombre:!public! !
+
+!Logistica class methodsFor!
+crearlogisticaNombre: unNombre
+	^(self new) initLogisticaNombre: unNombre.! !
+!Logistica class categoriesFor: #crearlogisticaNombre:!public! !
+
+Object subclass: #Logistica
+	instanceVariableNames: 'nombre administracion empleados clientes envios'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+	!
+
+!Logistica methodsFor!
+initLogisticaNombre: unNombre
+	nombre:= unNombre.
+	administracion := ''.
+	empleados:= OrderedCollection new.
+	clientes:= OrderedCollection new.
+	envios:= OrderedCollection new.
+! !
+!Logistica categoriesFor: #initLogisticaNombre:!public! !
+
+"00:27:31, domingo, 4 de junio de 2023: Image saved"!
+
+!Logistica methodsFor!
+initLogisticaNombre: unNombre
+	nombre:= unNombre.
+	administracion := ''.
+	empleados:= OrderedCollection new.
+	clientes:= OrderedCollection new.
+	envios:= OrderedCollection new.
+! !
+!Logistica categoriesFor: #initLogisticaNombre:!public! !
+
+logistica:= Logistica CrearLogisticaNombre: 'MSA'.!
+
+!Logistica class methodsFor!
+crearLogisticaNombre: unNombre
+	^self new initLogisticaNombre: unNombre! !
+!Logistica class categoriesFor: #crearLogisticaNombre:!public! !
+
+Logistica class removeSelector: #crearlogisticaNombre: ifAbsent: []!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Hello World!!'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [input  inspect .].
+	(input = '1') ifTrue: [input  inspect .].
+	(input = '2') ifTrue: [input  inspect .].
+	(input = '3') ifTrue: [input  inspect .].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"00:29:16, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+"00:29:42, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+MenuLogistica run.!
+
+MenuLogistica run.!
+
+"00:33:36, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Hello World!!'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: 'Hello World!!'; cr; flush.].
+	(input = '1') ifTrue: [input  inspect .].
+	(input = '2') ifTrue: [input  inspect .].
+	(input = '3') ifTrue: [input  inspect .].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Hello World!!'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [input  inspect .].
+	(input = '2') ifTrue: [input  inspect .].
+	(input = '3') ifTrue: [input  inspect .].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Hello World!!'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '3') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+1-Nuevo envio
+2-Generar Factura
+3-Cobrar factura!!'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '3') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+1-Nuevo envio
+2-Generar factura
+3-Cobrar factura'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '3') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Nuevo envio
+2-Generar factura
+3-Cobrar factura'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '3') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"00:35:56, domingo, 4 de junio de 2023: Image saved"!
+
+"00:35:59, domingo, 4 de junio de 2023: Image saved"!
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '3') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input logistica administracion |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input logistica administracion |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input logistica administracion |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| input logistica administracion |
+
+	self stdout 
+		nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	self stderr
+		nextPutAll: 'Press <Enter> to exit:'; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [	self stdout 
+		nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"00:39:10, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+"00:39:41, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| lector input logistica administracion |
+
+	lector:= self stdout.
+	lector nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [	self stdout 
+		nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector input logistica administracion |
+
+	lector:= self stdout.
+	lector nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [lector nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	lector:= self stdout.
+	lector nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [lector nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+self stdout nextPutAll: input ; cr; flush.].
+	(input = '1') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [self stdout nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '1') ifTrue: [lector nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [lector nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '1') ifTrue: [escritor nextPutAll: input ; cr; flush.].
+	(input = '2') ifTrue: [escritor nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: input ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"00:43:54, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdin .
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := lector nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := lector nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: 'seleccionar logistica' ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdin .
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := lector nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := lector nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: 'seleccionar logistica' ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	lector:= self stdin .
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := lector nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := lector nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: 'seleccionar logistica' ; cr; flush.].
+	input := self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+MenuLogistica run.!
+
+"00:45:19, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: input ; cr; flush.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+MenuLogistica run.!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Seleccionar logistica
+2-Crear logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: input ; cr; flush.].
+
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: input ; cr; flush.].
+
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"00:47:14, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	(input = '2') ifTrue: [escritor nextPutAll: 'Sistema Finalizado' ; cr; flush.].
+
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"00:50:43, domingo, 4 de junio de 2023: Image saved"!
+
+Object subclass: #Usuario_logistica
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Usuario_logistica guid: (GUID fromString: '{AB8795F2-3841-4F76-8EF3-52DA84B715A3}')!
+Usuario_logistica comment: ''!
+!Usuario_logistica categoriesForClass!Kernel-Objects! !
+Object subclass: #Usuario_logistica
+	instanceVariableNames: ' usuarios '
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!Usuario_logistica class methodsFor!
+crearUsuariosLogistica
+	^(self new) initUsuarioLogistica.! !
+!Usuario_logistica class categoriesFor: #crearUsuariosLogistica!public! !
+
+!Usuario_logistica methodsFor!
+initUsuarioLogistica
+	usuarios:= OrderedCollection new.! !
+!Usuario_logistica categoriesFor: #initUsuarioLogistica!public! !
+
+!Usuario_logistica methodsFor!
+usuarios
+	^usuarios! !
+!Usuario_logistica categoriesFor: #usuarios!accessing!private! !
+
+!Usuario_logistica methodsFor!
+usuarios: anObject
+	usuarios := anObject! !
+!Usuario_logistica categoriesFor: #usuarios:!accessing!private! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	usuarios put unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	usuarios add unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	self usuarios add unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	usuarios Add: unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	self usuarios Add: unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	self usuarios Add: unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	self usuarios Add unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	self usuarios add unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	self usuarios put unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregarUsuario: unUsuario
+	usuarios Append: unUsuario.! !
+!Usuario_logistica categoriesFor: #agregarUsuario:!public! !
+
+!Usuario_logistica methodsFor!
+agregar_usuario: unUsuario
+	usuarios Append: unUsuario.! !
+!Usuario_logistica categoriesFor: #agregar_usuario:!public! !
+
+Usuario_logistica removeSelector: #agregarUsuario: ifAbsent: []!
+
+"01:03:14, domingo, 4 de junio de 2023: Image saved"!
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	escritor nextPutAll: 'Sistema Finalizado' ; cr; flush.
+
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| lector escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	escritor nextPutAll: 'Sistema Finalizado' ; cr; flush.
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	escritor nextPutAll: 'Sistema Finalizado' ; cr; flush.
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"01:09:11, domingo, 4 de junio de 2023: Image saved"!
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].
+	escritor nextPutAll: 'Sistema Finalizado' ; cr; flush.
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"09:52:39, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+"09:54:52, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+"20:42:43, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+MenuLogistica run.!
+
+"20:47:19, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+"20:47:43, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+"20:47:58, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+(input = '1') ifTrue: [escritor  nextPutAll: 'Seleccionar logistica';cr;flush .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true = true) whileTrue: [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+(true = true) whileTrue [
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.]! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+(true = true) whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+('a' == 'a') whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+[true == true ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+[true == true ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| escritor input logistica administracion |
+
+
+[true ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input logistica administracion |
+
+
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input logistica administracion |
+
+
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"20:57:35, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].
+	self stdin nextLine.].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+
+continue:= true.
+[continue ] whileTrue: [
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:00:06, domingo, 4 de junio de 2023: Image saved"!
+
+"21:00:27, domingo, 4 de junio de 2023: Image saved"!
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica
+MenuLogistica run.!
+
+"21:01:29, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!Usuario_logistica methodsFor!
+agregar_usuario: unUsuario
+	usuarios add unUsuario.! !
+!Usuario_logistica categoriesFor: #agregar_usuario:!public! !
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!Usuario_logistica methodsFor!
+agregar_usuario: unUsuario
+	usuarios add: unUsuario.! !
+!Usuario_logistica categoriesFor: #agregar_usuario:!public! !
+
+"21:02:36, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+opcionesSeleccionLogistica! !
+!MenuLogistica categoriesFor: #opcionesSeleccionLogistica!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+
+continue:= true.
+[continue ] whileTrue: [
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+opcionesSeleccionLogistica
+	| escritor |
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.! !
+!MenuLogistica categoriesFor: #opcionesSeleccionLogistica!public! !
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:04:41, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+
+continue:= true.
+[continue ] whileTrue: [
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+opcionesMenuInicio
+	| escritor |
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Crear logistica
+2-Seleccionar logistica'; cr; flush.! !
+!MenuLogistica categoriesFor: #opcionesMenuInicio!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+input := self stdin nextLine.
+logistica:= Logistica crearLogisticaNombre: input .
+usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:07:18, domingo, 4 de junio de 2023: Image saved"!
+
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2') ifTrue: [continue := false].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!Usuario_logistica categoriesFor: #usuarios!accessing!public! !
+
+!Usuario_logistica methodsFor!
+cant_usuarios
+	^(self usuarios) size.! !
+!Usuario_logistica categoriesFor: #cant_usuarios!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2') ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:13:05, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:14:01, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2') ifTrue: [1 to: (Usuario_logistica cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:15:07, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and Usuario_logistica cant_usuarios > 0) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and Usuario_logistica cant_usuarios > 0) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:15:56, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: Usuario_logistica cant_usuarios > 0) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: (Usuario_logistica cant_usuarios > 0)) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: (Usuario_logistica cant_usuarios > 0)) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: (Usuario_logistica cant_usuarios > 0)) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: (Usuario_logistica cant_usuarios > 0)) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: (Usuario_logistica cant_usuarios > 0)) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [Usuario_logistica cant_usuarios > 0]) ifTrue: [1 to: ((Usuario_logistica usuarios) cant_usuarios) do: [:i|Usuario_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:17:07, domingo, 4 de junio de 2023: Image saved"!
+"21:17:16, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:17:39, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: ((usuarios_logistica usuarios) cant_usuarios) do: [:i|usuarios_logistica usuarios at: i ]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: ((usuarios_logistica usuarios) cant_usuarios) do: [:i|escritor nextPutAll: usuarios_logistica usuarios at: i ; cr; flush.]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: ((usuarios_logistica usuarios) cant_usuarios) do: [:i|escritor nextPutAll: usuarios_logistica usuarios at: i ; cr; flush.]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:18:25, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:19:05, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: (usuarios_logistica cant_usuarios) do: [:i|escritor nextPutAll: usuarios_logistica usuarios at: i ; cr; flush.]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:19:18, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:19:49, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: (usuarios_logistica cant_usuarios) do: [:i|escritor nextPutAll: (usuarios_logistica usuarios at: i) storeString ; cr; flush.]].].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:20:10, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!Logistica methodsFor!
+storeString
+	^self ! !
+!Logistica categoriesFor: #storeString!public! !
+
+!Logistica methodsFor!
+storeString
+	^self nombre.! !
+!Logistica categoriesFor: #storeString!public! !
+
+"21:21:24, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!Logistica methodsFor!
+storeString
+	^nombre.! !
+!Logistica categoriesFor: #storeString!public! !
+
+"21:21:59, domingo, 4 de junio de 2023: Image saved"!
+"21:22:05, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: (usuarios_logistica cant_usuarios) do: [:i|escritor nextPutAll: (usuarios_logistica usuarios at: i) storeString ; cr; flush.]].
+	escritor  nextPutAll: ''; cr; flush. ].! !
+!MenuLogistica categoriesFor: #main!operations-startup!public! !
+
+"21:23:42, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+"21:24:03, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [1 to: (usuarios_logistica cant_usuarios) do: [:i|escritor nextPutAll: (usuarios_logistica usuarios at: i) storeString ; cr; flush.]].
+	escritor  nextPutAll: ''; cr; flush. ].! !
+!MenuLogistica categoriesFor: #main!public! !
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: (usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: (usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [self mostrarLogisticas: usuarios_logistica.].]! !
+!MenuLogistica categoriesFor: #main!public! !
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+	input := self stdin nextLine.
+	logistica:= Logistica crearLogisticaNombre: input .
+	usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [self mostrarLogisticas: usuarios_logistica.].].! !
+!MenuLogistica categoriesFor: #main!public! !
+
+"21:27:27, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												].
+].! !
+!MenuLogistica categoriesFor: #main!public! !
+
+"21:28:41, domingo, 4 de junio de 2023: Image saved"!
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: i storeString,(usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+"21:30:12, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: i storeString,''.(usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: i storeString,') '.(usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: i storeString,') ',(usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+"21:31:23, domingo, 4 de junio de 2023: Image saved"!
+"21:31:30, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: 'Seleccione la logistica que quiere administrar:'; cr; flush. 
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: i storeString,') ',(usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+MenuLogistica run.!
+
+"21:33:11, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuLogistica methodsFor!
+mostrarLogisticas: usuarios_logistica
+	self stdout  nextPutAll: 'Seleccione la logistica que desea administrar:'; cr; flush. 
+	self stdout  nextPutAll: ''; cr; flush. 
+	1 to: (usuarios_logistica cant_usuarios) do: [:i|self stdout nextPutAll: i storeString,') ',(usuarios_logistica usuarios at: i) storeString ; cr; flush.].
+	self stdout  nextPutAll: ''; cr; flush. ! !
+!MenuLogistica categoriesFor: #mostrarLogisticas:!public! !
+
+"21:33:48, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+!MenuLogistica methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												].
+].! !
+!MenuLogistica categoriesFor: #main!public! !
+
+MenuLogistica rename: #MenuSeleccion!
+
+ConsoleSessionManager subclass: #MenuLogistica
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+MenuLogistica guid: (GUID fromString: '{F2EB51F9-6882-4C69-9EB7-71D35E3189EC}')!
+MenuLogistica comment: ''!
+!MenuLogistica categoriesForClass!System-Support! !
+!MenuLogistica methodsFor!
+main
+! !
+!MenuLogistica categoriesFor: #main!public! !
+
+!MenuLogistica methodsFor!
+main
+! !
+!MenuLogistica categoriesFor: #main!public! !
+
+!MenuLogistica class methodsFor!
+run
+	| consoleAlreadyOpen |
+	consoleAlreadyOpen := self current openConsole.
+	self new mainLogistica.
+	consoleAlreadyOpen ifFalse: [self current closeConsole]! !
+!MenuLogistica class categoriesFor: #run!public! !
+
+!MenuLogistica class methodsFor!
+runUnaLogistica
+	| consoleAlreadyOpen |
+	consoleAlreadyOpen := self current openConsole.
+	self new mainLogistica.
+	consoleAlreadyOpen ifFalse: [self current closeConsole]! !
+!MenuLogistica class categoriesFor: #runUnaLogistica!public! !
+
+MenuLogistica class removeSelector: #run ifAbsent: []!
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+MenuLogistica removeSelector: #main ifAbsent: []!
+
+!MenuLogistica class methodsFor!
+runUnaLogistica: unaLogistica
+	| consoleAlreadyOpen |
+	consoleAlreadyOpen := self current openConsole.
+	self new mainLogistica.
+	consoleAlreadyOpen ifFalse: [self current closeConsole]! !
+!MenuLogistica class categoriesFor: #runUnaLogistica:!public! !
+
+!MenuLogistica class methodsFor!
+runUnaLogistica: unaLogistica
+	| consoleAlreadyOpen |
+	consoleAlreadyOpen := self current openConsole.
+	self new mainUnaLogistica: unaLogistica .
+	consoleAlreadyOpen ifFalse: [self current closeConsole]! !
+!MenuLogistica class categoriesFor: #runUnaLogistica:!public! !
+
+MenuLogistica class removeSelector: #runUnaLogistica ifAbsent: []!
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= 
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: input.
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: input asInteger .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	self stdout  nextPutAll: 'Bienvenido Logistica: ',unaLogistica storeString ; cr; flush. 
+	
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	self stdout  nextPutAll: 'Bienvenido Logistica: ',unaLogistica storeString ; cr; flush. 
+	self stdin nextLine.
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+"21:47:34, domingo, 4 de junio de 2023: Image saved"!
+
+| usuarios_logistica logistica |
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'MSA'.
+usuarios_logistica agregar_usuario: logistica.
+MenuLogistica run.!
+
+MenuLogistica run.!
+
+MenuLogistica run.!
+
+MenuSeleccion run.!
+
+"21:48:33, domingo, 4 de junio de 2023: Image saved"!
+"21:48:41, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: (input asInteger) .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+"21:49:06, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: (input asInt64 ) .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+MenuSeleccion run.!
+
+MenuSeleccion run.!
+
+"21:50:11, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: (input asInt64 ) .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+MenuSeleccion run.!
+
+"21:50:49, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: (input asNumber ) .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+"21:51:56, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+!MenuLogistica methodsFor!
+opcionesMenuInicio
+	| escritor |
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Salir
+1-Registrar envio
+2-Generar factura
+3-Cobrar factura'; cr; flush.! !
+!MenuLogistica categoriesFor: #opcionesMenuInicio!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	self opcionesMenuInicio. 
+	self stdin nextLine.
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica administracion |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'Correo Argentino'.
+usuarios_logistica agregar_usuario: logistica.
+logistica:= Logistica crearLogisticaNombre: 'Rappi'.
+usuarios_logistica agregar_usuario: logistica.
+logistica:= Logistica crearLogisticaNombre: 'MMSPack'.
+usuarios_logistica agregar_usuario: logistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: (input asNumber ) .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+!MenuSeleccion methodsFor!
+main
+	| continue escritor input usuarios_logistica logistica |
+
+usuarios_logistica:= Usuario_logistica crearUsuariosLogistica.
+logistica:= Logistica crearLogisticaNombre: 'Correo Argentino'.
+usuarios_logistica agregar_usuario: logistica.
+logistica:= Logistica crearLogisticaNombre: 'Rappi'.
+usuarios_logistica agregar_usuario: logistica.
+logistica:= Logistica crearLogisticaNombre: 'MMSPack'.
+usuarios_logistica agregar_usuario: logistica.
+escritor := self stdout.
+continue:= true.
+[continue ] whileTrue: [
+	self opcionesMenuInicio.
+	input := self stdin nextLine.
+	(input = '0') ifTrue: [continue := false].
+	(input = '1') ifTrue: [escritor nextPutAll: 'Ingrese el nombre de la nueva logistica'; cr; flush.
+					input := self stdin nextLine.
+					logistica:= Logistica crearLogisticaNombre: input .
+					usuarios_logistica  agregar_usuario: logistica ].
+	(input = '2' and: [usuarios_logistica cant_usuarios > 0]) ifTrue: [
+												self mostrarLogisticas: usuarios_logistica.
+												input:= self stdin nextLine.
+												logistica:= usuarios_logistica usuarios at: (input asNumber ) .
+												MenuLogistica runUnaLogistica: logistica.
+												].
+].! !
+!MenuSeleccion categoriesFor: #main!public! !
+
+"21:54:55, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+"21:55:13, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+MenuSeleccion run.!
+
+!MenuLogistica methodsFor!
+opcionesMenuInicio
+	| escritor |
+	escritor := self stdout.
+	escritor nextPutAll: 'Elija una opcion:
+0-Atras
+1-Registrar envio
+2-Generar factura
+3-Cobrar factura'; cr; flush.! !
+!MenuLogistica categoriesFor: #opcionesMenuInicio!public! !
+
+!MenuLogistica methodsFor!
+opcionesMenuInicio
+	self stdout nextPutAll: 'Elija una opcion:
+0-Atras
+1-Registrar envio
+2-Generar factura
+3-Cobrar factura'; cr; flush.! !
+!MenuLogistica categoriesFor: #opcionesMenuInicio!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	self opcionesMenuInicio. 
+	self stdin nextLine.
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+"21:56:21, domingo, 4 de junio de 2023: Image saved"!
+
+!MenuLogistica methodsFor!
+opcionesMenuInicio
+	self stdout nextPutAll: 'Elija una opcion:
+0-Atras
+1-Registrar envio
+2-Generar factura
+3-Cobrar factura'; cr; flush.! !
+!MenuLogistica categoriesFor: #opcionesMenuInicio!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString.
+	self opcionesMenuInicio. 
+	self stdin nextLine.
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+"21:57:32, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+"21:57:50, domingo, 4 de junio de 2023: Dolphin Smalltalk Professional started"!
+
+MenuSeleccion run.!
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	self stdin nextLine.
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+"21:58:44, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	| input |
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	input:= self stdin nextLine.
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	| input |
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	input:= self stdin nextLine.
+	(input == '1') ifTrue: [self stdout  nextPutAll: 'Registrar envio' ].
+	(input == '2') ifTrue: [self stdout  nextPutAll: 'Generar factura'].
+	(input == '3') ifTrue: [self stdout  nextPutAll: 'Cobrar factura'].
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	| input |
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	input:= self stdin nextLine.
+	(input == '1') ifTrue: [self stdout  nextPutAll: 'Registrar envio'; cr; flush.].
+	(input == '2') ifTrue: [self stdout  nextPutAll: 'Generar factura'; cr; flush.].
+	(input == '3') ifTrue: [self stdout  nextPutAll: 'Cobrar factura'; cr; flush.].
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+"22:01:51, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	| input |
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	input:= self stdin nextLine.
+	(input = '1') ifTrue: [self stdout  nextPutAll: 'Registrar envio'; cr; flush.].
+	(input = '2') ifTrue: [self stdout  nextPutAll: 'Generar factura'; cr; flush.].
+	(input = '3') ifTrue: [self stdout  nextPutAll: 'Cobrar factura'; cr; flush.].
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+"22:02:44, domingo, 4 de junio de 2023: Image saved"!
+
+MenuSeleccion run.!
+
+!MenuLogistica methodsFor!
+registrarEnvio: unEnvio! !
+!MenuLogistica categoriesFor: #registrarEnvio:!public! !
+
+!MenuLogistica methodsFor!
+generarFacturaListaEnvios: unaListaDeEnvios cliente: unCliente! !
+!MenuLogistica categoriesFor: #generarFacturaListaEnvios:cliente:!public! !
+
+!MenuLogistica methodsFor!
+generarFacturaDesde: unaFecha hasta: otraFecha cliente: unCliente! !
+!MenuLogistica categoriesFor: #generarFacturaDesde:hasta:cliente:!public! !
+
+MenuLogistica removeSelector: #generarFacturaListaEnvios:cliente: ifAbsent: []!
+
+!MenuLogistica methodsFor!
+paga_facturaNro: nroFactura metodo_de_pago: unMetodo_de_pago! !
+!MenuLogistica categoriesFor: #paga_facturaNro:metodo_de_pago:!public! !
+
+!MenuLogistica methodsFor!
+generar_facturaDesde: unaFecha hasta: otraFecha cliente: unCliente! !
+!MenuLogistica categoriesFor: #generar_facturaDesde:hasta:cliente:!public! !
+
+MenuLogistica removeSelector: #generarFacturaDesde:hasta:cliente: ifAbsent: []!
+
+!MenuLogistica methodsFor!
+registrar_envio: unEnvio
+	! !
+!MenuLogistica categoriesFor: #registrar_envio:!public! !
+
+MenuLogistica removeSelector: #registrarEnvio: ifAbsent: []!
+
+!MenuLogistica methodsFor!
+registrar_envio: unDestino idCliente: unIdCliente fechaEstimada: unaFecha
+	! !
+!MenuLogistica categoriesFor: #registrar_envio:idCliente:fechaEstimada:!public! !
+
+MenuLogistica removeSelector: #registrar_envio: ifAbsent: []!
+
+!Envio class methodsFor!
+crearEnvioDestino: unDestino idCliente: unIdCliente
+	! !
+!Envio class categoriesFor: #crearEnvioDestino:idCliente:!public! !
+
+!Envio methodsFor!
+initEnvioDestino: unDestino idCliente: unIdCliente
+	! !
+!Envio categoriesFor: #initEnvioDestino:idCliente:!public! !
+
+!Envio class methodsFor!
+crearEnvioDestino: unDestino idCliente: unIdCliente
+	^(self new) initEnvioDestino: unDestino idCliente: unIdCliente! !
+!Envio class categoriesFor: #crearEnvioDestino:idCliente:!public! !
+
+!Envio methodsFor!
+initEnvioDestino: unDestino idCliente: unIdCliente
+	destino:= unDestino.
+	cliente:= unIdCliente.! !
+!Envio categoriesFor: #initEnvioDestino:idCliente:!public! !
+
+!Logistica methodsFor!
+registrar_envio: unDestino idCliente: unIdCliente fechaEstimada: unaFecha
+	! !
+!Logistica categoriesFor: #registrar_envio:idCliente:fechaEstimada:!public! !
+
+!Logistica methodsFor!
+generar_facturaDesde: unaFecha hasta: otraFecha cliente: unCliente! !
+!Logistica categoriesFor: #generar_facturaDesde:hasta:cliente:!public! !
+
+!Logistica methodsFor!
+paga_facturaNro: nroFactura metodo_de_pago: unMetodo_de_pago! !
+!Logistica categoriesFor: #paga_facturaNro:metodo_de_pago:!public! !
+
+MenuLogistica removeSelector: #registrar_envio:idCliente:fechaEstimada: ifAbsent: []!
+
+MenuLogistica removeSelector: #paga_facturaNro:metodo_de_pago: ifAbsent: []!
+
+MenuLogistica removeSelector: #generar_facturaDesde:hasta:cliente: ifAbsent: []!
+
+!Logistica categoriesFor: #registrar_envio:idCliente:fechaEstimada:!logistica!public! !
+
+!Logistica categoriesFor: #generar_facturaDesde:hasta:cliente:!logistica!public! !
+
+!Logistica categoriesFor: #paga_facturaNro:metodo_de_pago:!logistica!public! !
+
+!Logistica methodsFor!
+registrar_envio: unDestino idCliente: unIdCliente! !
+!Logistica categoriesFor: #registrar_envio:idCliente:!logistica!public! !
+
+Logistica removeSelector: #registrar_envio:idCliente:fechaEstimada: ifAbsent: []!
+
+!Logistica methodsFor!
+registrar_envio: unDestino idCliente: unIdCliente
+	| envio |
+	envio:= Envio crearEnvioDestino: unDestino idCliente: unIdCliente.
+	(self envios) add: envio.! !
+!Logistica categoriesFor: #registrar_envio:idCliente:!logistica!public! !
+
+"22:14:16, domingo, 4 de junio de 2023: Image saved"!
+
+"22:14:41, domingo, 4 de junio de 2023: Image saved"!
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	| input |
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	input:= self stdin nextLine.
+	(input = '1') ifTrue: [unaLogistica registrar_envio: '' idCliente: '' ].
+	(input = '2') ifTrue: [self stdout  nextPutAll: 'Generar factura'; cr; flush.].
+	(input = '3') ifTrue: [self stdout  nextPutAll: 'Cobrar factura'; cr; flush.].
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
+!MenuLogistica methodsFor!
+mainUnaLogistica: unaLogistica
+	| input |
+	self stdout nextPutAll: 'Bienvenido, Logistica: ',unaLogistica storeString; cr; flush.
+	self opcionesMenuInicio. 
+	input:= self stdin nextLine.
+	(input = '1') ifTrue: [unaLogistica registrar_envio: '' idCliente: '' ].
+	(input = '2') ifTrue: [unaLogistica generar_facturaDesde: '' hasta: '' cliente: '' ].
+	(input = '3') ifTrue: [unaLogistica paga_facturaNro: '' metodo_de_pago: '' ].
+	! !
+!MenuLogistica categoriesFor: #mainUnaLogistica:!public! !
+
